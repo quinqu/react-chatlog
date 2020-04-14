@@ -9,7 +9,7 @@ const App = () => {
   return (
     <div id="App">
       <header>
-        <h1>Quin's Chat App</h1>
+        <h1>Chat App</h1>
       </header>
       <main>
         <ChatLog chatMessages={data} />

@@ -1,5 +1,6 @@
 import React from 'react';
 import Timestamp from './Timestamp';
+import './ChatEntry.css';
 
 
 const ChatEntry = (props) => {
@@ -7,27 +8,28 @@ const ChatEntry = (props) => {
   const sender = props.sender;
   const time = <Timestamp time={props.timeStamp} />;
 
-  let chatEntry = <h1>hello</h1>;
-  if(sender === "Estragon"){
-    chatEntry = (
-      <div className="chat-entry local">
+  
+  if (sender === "Estragon"){
+    return(
+      <div className="chat-entry remote">
         <h3 className="entry-name">{sender}</h3>
         <p className="entry-bubble"> {body}</p>
-        <h6 className="entry-time"> {time}</h6>
+        <p className="entry-time"> {time}</p>
+        
       </div>
       );
     
   }else{
-    chatEntry = (
-      <div className="chat-entry remote">
+    return (
+      <div className="chat-entry local">
         <h3 className="entry-name">{sender} </h3>
-        <p className="entry-bubble"> {body}</p>
-        <h6 className="entry-time"> {time}</h6>
+        <p className="entry-bubble">{body}</p>
+        <p className="entry-time">{time}</p>
       </div>
       );
   }
 
-  return chatEntry;
+ 
 }
 
 export default ChatEntry;
